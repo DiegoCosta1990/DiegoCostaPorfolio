@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, ListItem, ListItemIcon, List, IconButton, ListItemText, Avatar, Divider, Typography, Box} from '@material-ui/core';
 import { AssignmentInd, Home, Apps, ContactMail } from '@material-ui/icons';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -10,7 +11,8 @@ const useStyles = makeStyles( theme => ({
     menuSliderContainer: {
         width: 250,
         background: "rgba(9,92,121,1)",
-        height: "30rem"
+        height: "100%",
+        textAlign: "center"
     },
     avatarContainer: {
         display: "block",
@@ -26,15 +28,18 @@ const useStyles = makeStyles( theme => ({
 const menuItems = [
     {
         listIcon: <Home />,
-        listText: "Home"
+        listText: "Home",
+        listPath: "/"
     },
     {
         listIcon: <AssignmentInd />,
-        listText: "Resume"
+        listText: "Resume",
+        listPath: "/resume"
     },
     {
         listIcon: <Apps />,
-        listText: "Portfolio"
+        listText: "Portfolio",
+        listPath: "/portfolio"
     },
     {
         listIcon: <ContactMail />,
@@ -53,12 +58,12 @@ const Navbar = () => {
     const classes = useStyles(); 
 
     const sideList = slider => (
-        <Box className={classes.menuSliderContainer} component="div">
+        <Box className={classes.menuSliderContainer} component="div" onClick={toggleSlider(slider, false)}>
             <Avatar className={classes.avatarContainer} src={avatar} alt="Diego Costa"/>
             <Divider />
             <List>
                 {menuItems.map((lsItem, key) => (
-                    <ListItem button key={key}>
+                    <ListItem button key={key} component= {Link} to= {lsItem.listPath}>
                         <ListItemIcon className={classes.listItem}>
                             {lsItem.listIcon}
                         </ListItemIcon>
@@ -80,7 +85,7 @@ const Navbar = () => {
                     <Typography style={{color:"white", marginLeft: "10px"}} variant='h5'>
                         Portfolio
                     </Typography>
-                    <MobilRightMenuSlider open={state.right}>
+                    <MobilRightMenuSlider open={state.right} anchor="right" onClose={toggleSlider("right", false)}>
                         {sideList("right")}
                     </MobilRightMenuSlider>                 
                 </Toolbar>
