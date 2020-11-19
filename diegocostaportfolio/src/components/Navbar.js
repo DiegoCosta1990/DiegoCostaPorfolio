@@ -43,7 +43,8 @@ const menuItems = [
     },
     {
         listIcon: <ContactMail />,
-        listText: "Contact"
+        listText: "Contact",
+        listPath: "/contact"
     },
 ];
 const Navbar = () => {
