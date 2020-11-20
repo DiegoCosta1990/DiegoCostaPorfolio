@@ -6,6 +6,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import avatar from '../images/yo.jpg';
 import { makeStyles } from '@material-ui/core/styles';
 import MobilRightMenuSlider from '@material-ui/core/Drawer';
+import Footer from './Footer';
 
 const useStyles = makeStyles( theme => ({
     menuSliderContainer: {
@@ -88,6 +89,7 @@ const Navbar = () => {
                     </Typography>
                     <MobilRightMenuSlider open={state.right} anchor="right" onClose={toggleSlider("right", false)}>
                         {sideList("right")}
+                        <Footer />
                     </MobilRightMenuSlider>                 
                 </Toolbar>
             </AppBar>            

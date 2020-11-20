@@ -48,10 +48,7 @@ const Portfolio = () => {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small" color="primary">
-                                    Share
-                                </Button>
-                                <Button size="small" color="primary">
+                                <Button size="small" color="primary" href="https://netflix-clone-d8a63.web.app/">
                                     Live Demo
                                 </Button>
                             </CardActions>
@@ -72,10 +69,7 @@ const Portfolio = () => {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small" color="primary">
-                                    Share
-                                </Button>
-                                <Button size="small" color="primary">
+                                <Button size="small" color="primary" href="http://diegocosta-search-movie.surge.sh/">
                                     Live Demo
                                 </Button>
                             </CardActions>
@@ -95,10 +89,7 @@ const Portfolio = () => {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small" color="primary">
-                                    Share
-                                </Button>
-                                <Button size="small" color="primary">
+                                <Button size="small" color="primary" href="http://diegocosta-react-material-ui.surge.sh/">
                                     Live Demo
                                 </Button>
                             </CardActions>
