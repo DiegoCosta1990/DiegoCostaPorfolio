@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { TextField, Typography, Button, Grid, Box } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import Navbar from './Navbar';
-import Typed from 'react-typed'; 
+import Typed from 'react-typed';
+import {db} from '../components/Firebase';
 
 const useStyles = makeStyles(theme => ({
     form: {
@@ -51,13 +52,45 @@ const InputField = withStyles({
 
 const Contact = () => {
 
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [companyName, setCompanyName] = useState("");
+    const [message, setMessage] = useState("");
+
+    const [loader, setLoader] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setLoader(true);
+
+        db.collection('contacts').add({
+            name:name,
+            email:email,
+            companyName:companyName,
+            message:message
+        })
+        .then(() => {
+            alert("Message has been submitted! Thanks!");
+            setLoader(false);
+        })
+        .catch((error) => {
+            alert(error.message);
+            setLoader(false);
+        });
+
+        setName("");
+        setEmail("");
+        setCompanyName("");
+        setMessage("");
+    }
+
     const classes = useStyles();
 
     return (
             <Box component="div">
             <Navbar />
                 <Grid container justify="center">
-                    <Box component="form" className={classes.form}>
+                    <Box component="form" className={classes.form} onSubmit={handleSubmit}>
                         <Typography variant="h5" style={{color: "white", textAlign: "center", textTransform: "uppercase"}}>
                             <Typed
                                 className={classes.typedContainer} 
@@ -68,14 +101,55 @@ const Contact = () => {
                             />
                         </Typography>
                         <br/>
-                        <InputField fullWidth={true} label="Name" variant="outlined" margin="normal" size="medium" inputProps={{style:{color: "white"}}}/>
+                        <InputField 
+                            fullWidth={true}
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            label="Name" 
+                            variant="outlined" 
+                            margin="normal" 
+                            size="medium" 
+                            inputProps={{style:{color: "white"}}}/>
                         <br/>
-                        <InputField fullWidth={true} label="Email" variant="outlined" margin="normal" size="medium" inputProps={{style:{color: "white"}}} />
+                        <InputField 
+                            fullWidth={true}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)} 
+                            label="Email" 
+                            variant="outlined" 
+                            margin="normal" 
+                            size="medium" 
+                            inputProps={{style:{color: "white"}}} />
                         <br/>
-                        <InputField fullWidth={true} label="Company Name" variant="outlined" margin="normal" size="medium" inputProps={{style:{color: "white"}}} />
+                        <InputField 
+                            fullWidth={true} 
+                            value={companyName}
+                            onChange={(e) => setCompanyName(e.target.value)}
+                            label="Company Name" 
+                            variant="outlined" 
+                            margin="normal" 
+                            size="medium" 
+                            inputProps={{style:{color: "white"}}} />
+                        <br/>
+                        <InputField 
+                            fullWidth={true}
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)} 
+                            label="Write your message" 
+                            variant="outlined" 
+                            margin="normal" s
+                            ize="medium" 
+                            multiline={true} 
+                            inputProps={{style:{color: "white"}}}/>
                         <br/>
                         <br/>
-                        <Button className={classes.button} variant="outlined" fullWidth={true} endIcon={<SendIcon/>} to="d.costa1990@outlook.com">
+                        <Button 
+                            className={classes.button} 
+                            variant="outlined" 
+                            fullWidth={true} 
+                            endIcon={<SendIcon/>} 
+                            type="submit"
+                            style={{background: loader ? "#ccc" : "none"}}>
                             Contact me
                         </Button>
                     </Box>
