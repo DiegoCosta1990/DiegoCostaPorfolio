@@ -15,6 +15,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import project1 from '../images/project1.jpg';
 import project2 from '../images/project2.JPG';
 import project3 from '../images/project3.JPG';
+import project4 from '../images/project4.JPG';
+
 
 const useStyles =  makeStyles({
     mainContainer: {
@@ -22,9 +24,11 @@ const useStyles =  makeStyles({
     },
     cardContainer: {
         maxWidth: 345,
-        margin: "5rem auto"
+        margin: "5rem auto",
+        "&:hover": {
+            boxShadow: "1px 0px 53px 4px rgba(9,92,121,1)"
+        },
     }
-
 });
 
 const Portfolio = () => {
@@ -90,6 +94,26 @@ const Portfolio = () => {
                             </CardContent>
                             <CardActions>
                                 <Button size="small" color="primary" href="http://diegocosta-react-material-ui.surge.sh/">
+                                    Live Demo
+                                </Button>
+                            </CardActions>
+                        </CardActionArea>
+                    </Card>                    
+                </Grid>
+                <Grid item xs={12} sm={8} md={6}>
+                    <Card className={classes.cardContainer}>
+                        <CardActionArea>
+                            <CardMedia component="img" alt="proyect1" height="140" image={ project4 }/>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" color="initial">
+                                    MERN Full Stack <i>Tinder Clone</i>
+                                </Typography>
+                                <Typography variant="body2" color="textSecundary" component="p">
+                                    A MERN Full Stack Tinder Clone with the frontend deployed in Firebase and the backend deployed in Heroku.
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button size="small" color="primary" href="https://tinderclone-ef528.web.app/">
                                     Live Demo
                                 </Button>
                             </CardActions>
