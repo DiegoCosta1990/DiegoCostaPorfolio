@@ -103,7 +103,7 @@ const Portfolio = () => {
                 <Grid item xs={12} sm={8} md={6}>
                     <Card className={classes.cardContainer}>
                         <CardActionArea>
-                            <CardMedia component="img" alt="proyect1" height="140" image={ project4 }/>
+                            <CardMedia component="img" alt="proyect4" height="140" image={ project4 }/>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" color="initial">
                                     MERN Full Stack <i>Tinder Clone</i>
