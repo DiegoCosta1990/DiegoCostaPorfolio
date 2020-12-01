@@ -16,6 +16,8 @@ import project1 from '../images/project1.jpg';
 import project2 from '../images/project2.JPG';
 import project3 from '../images/project3.JPG';
 import project4 from '../images/project4.JPG';
+import project5 from '../images/project5.jpg';
+
 
 
 const useStyles =  makeStyles({
@@ -114,6 +116,26 @@ const Portfolio = () => {
                             </CardContent>
                             <CardActions>
                                 <Button size="small" color="primary" href="https://tinderclone-ef528.web.app/">
+                                    Live Demo
+                                </Button>
+                            </CardActions>
+                        </CardActionArea>
+                    </Card>                    
+                </Grid>
+                <Grid item xs={12} sm={8} md={6}>
+                    <Card className={classes.cardContainer}>
+                        <CardActionArea>
+                            <CardMedia component="img" alt="proyect5" height="140" image={ project5 }/>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" color="initial">
+                                    MERN Full Stack Simple <i>Tik tok Clone</i>
+                                </Typography>
+                                <Typography variant="body2" color="textSecundary" component="p">
+                                    A Simple MERN Full Stack Tiktok Clone with the frontend deployed in Firebase and the backend deployed in Heroku.
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button size="small" color="primary" href="https://tiktokclone-5c5a9.firebaseapp.com/">
                                     Live Demo
                                 </Button>
                             </CardActions>
