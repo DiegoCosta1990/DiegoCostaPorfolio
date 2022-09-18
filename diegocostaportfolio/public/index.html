@@ -5,7 +5,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <title>React App</title>
+    <title>Diego Costa Portfolio</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -20,5 +20,25 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+     
+      const firebaseConfig = {
+        apiKey: "AIzaSyAcp8r_s69j9j3VzxONKDNBGulgMcKQqPc",
+        authDomain: "diegocostaportfolio.firebaseapp.com",
+        databaseURL: "https://diegocostaportfolio.firebaseio.com",
+        projectId: "diegocostaportfolio",
+        storageBucket: "diegocostaportfolio.appspot.com",
+        messagingSenderId: "565510551001",
+        appId: "1:565510551001:web:e23b57cbf015a04c3f95c8",
+        measurementId: "G-ZLKH9R1XFM"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
   </body>
 </html>

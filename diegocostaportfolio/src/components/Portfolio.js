@@ -17,6 +17,9 @@ import project2 from '../images/project2.JPG';
 import project3 from '../images/project3.JPG';
 import project4 from '../images/project4.JPG';
 import project5 from '../images/project5.jpg';
+import project6 from '../images/project6.JPG';
+import project7 from '../images/project7.JPG';
+import proyect8dogs from '../images/proyect8dogs.jpg'
 
 
 
@@ -136,6 +139,68 @@ const Portfolio = () => {
                             </CardContent>
                             <CardActions>
                                 <Button size="small" color="primary" href="https://tiktokclone-5c5a9.firebaseapp.com/">
+                                    Live Demo
+                                </Button>
+                            </CardActions>
+                        </CardActionArea>
+                    </Card>                    
+                </Grid>
+                <Grid item xs={12} sm={8} md={6}>
+                    <Card className={classes.cardContainer}>
+                        <CardActionArea>
+                            <CardMedia component="img" alt="proyect6" height="140" image={ project6 }/>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" color="initial">
+                                    React.js / Material-ui <i>Covid-19 Global Tracker</i>
+                                </Typography>
+                                <Typography variant="body2" color="textSecundary" component="p">
+                                    A Coronavirus Global Tracker to identify the Infected, Recovered and Death people. Using https://covid19.mathdro.id/api
+
+API. Deployed in Firebase.
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button size="small" color="primary" href="https://covidtracker-715c0.firebaseapp.com/">
+                                    Live Demo
+                                </Button>
+                            </CardActions>
+                        </CardActionArea>
+                    </Card>                    
+                </Grid>
+                <Grid item xs={12} sm={8} md={6}>
+                    <Card className={classes.cardContainer}>
+                        <CardActionArea>
+                            <CardMedia component="img" alt="proyect5" height="140" image={ project7 }/>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" color="initial">
+                                    React.js / Material UI <i>NASA A.P.O.D Webapp</i>
+                                </Typography>
+                                <Typography variant="body2" color="textSecundary" component="p">
+                                    A webapp built with React.js, material-ui, axios, gsap, react hooks, powered by the NASA OPEN API to see the NASA's Astronomic Picture of the day.
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button size="small" color="primary" href="https://nasapicture-98f40.web.app/">
+                                    Live Demo
+                                </Button>
+                            </CardActions>
+                        </CardActionArea>
+                    </Card>                    
+                </Grid>
+                <Grid item xs={12} sm={8} md={6}>
+                    <Card className={classes.cardContainer}>
+                        <CardActionArea>
+                            <CardMedia component="img" alt="proyect1" height="140" image={ proyect8dogs }/>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" color="initial">
+                                    Front End <i>Doggiefy</i>
+                                </Typography>
+                                <Typography variant="body2" color="textSecundary" component="p">
+                                    A front end social media, Instagram alike, for dogs built with React.js and Material UI, and deployed with Hostinger.
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button size="small" color="primary" href="https://doggiefy.000webhostapp.com/">
                                     Live Demo
                                 </Button>
                             </CardActions>

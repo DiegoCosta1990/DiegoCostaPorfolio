@@ -1,2 +1,2 @@
 # DiegoCostaPorfolio
-My porfolio Website with React.js and Material UI
+My porfolio Website with React.js, Material UI and Firebase as db.
